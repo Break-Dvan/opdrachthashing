@@ -3,7 +3,7 @@
 define('HOST', 'localhost');
 define('DATABASE', 'opdrachthashing');
 define('USER', 'root');
-define('PASSWORD','H00rnb33ck');
+define('PASSWORD','');
 $dbconn='';
 //connectie maken
 try {
