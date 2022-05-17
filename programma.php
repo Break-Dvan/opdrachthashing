@@ -1,9 +1,11 @@
 <?php
 session_start();
+include_once 'conn/database.php';
 $ingelogd=isset($_SESSION['ingelogd']) ? $_SESSION['ingelogd'] : false;
-if ($ingelogd) {
+if (!$ingelogd) {
     header('refresh=1; login.php');
 }
+global $dbconn;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,22 +15,10 @@ if ($ingelogd) {
 </head>
 <body>
 <?php
-//naam van de database
-//locatie van de database
-//gebruikersnaam en wachtwoord
-//Initialisatie
-//$host='localhost';
-define('HOST', 'localhost');
-define('DATABASE', 'webshop');
-define('USER', 'root');
-define('PASSWORD','H00rnb33ck');
-//STAP 2 | connectie db
-$conn=mysqli_connect('localhost', USER, PASSWORD, DATABASE)
-or die("CONNECTIE GING FOUT!");
-//STAP 3 | Query uitvoeren
+
 $query = "SELECT id, achternaam, email, postcode, straat, voornaam, woonplaats FROM klant;";
-$result= mysqli_query($conn, $query);
-//STAP 4 | gegevens naar scherm...
+$result= mysqli_query($dbconn, $query);
+//gegevens naar scherm...
 echo "<h2>Klantgegevens</h2>";
 ?>
 
@@ -57,8 +47,8 @@ echo "<h2>Klantgegevens</h2>";
                <td>'.$row['email'].'</td>
             </tr>';
     }
-    //STAP 5 | sluiten databaseconnectie
-    mysqli_close($conn)
+    //sluiten databaseconnectie
+    mysqli_close($dbconn)
     or die('Sluiten MysQL-db niet gelukt...');
     ?>
 </table>
