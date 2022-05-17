@@ -10,7 +10,7 @@ if (isset($_POST['submit'])){
 }
 else {
     //niet gepost...
-    header('refresh: 1; login.php');
+    header('refresh: 1; _login.php');
     exit();
 }
 //select-query met 'WHERE email='' and wachtwoord='';
@@ -28,7 +28,7 @@ if ($aantal==1) {
     exit;
 }
 else {
-    header('refresh: 1; login.php');
+    header('refresh: 1; _login.php');
     exit;
 }
 //als het niet lukt, laat het even weten!

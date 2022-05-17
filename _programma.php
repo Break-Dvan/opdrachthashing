@@ -3,7 +3,7 @@ session_start();
 include_once 'conn/database.php';
 $ingelogd=isset($_SESSION['ingelogd']) ? $_SESSION['ingelogd'] : false;
 if (!$ingelogd) {
-    header('refresh=1; login.php');
+    header('refresh=1; _login.php');
 }
 ?>
 <!DOCTYPE html>
