@@ -19,7 +19,7 @@ global $dbconn;
 $query = "SELECT id, achternaam, email, postcode, straat, voornaam, woonplaats FROM klant;";
 $result= mysqli_query($dbconn, $query);
 //gegevens naar scherm...
-echo "<h2>Klantgegevens</h2>";
+echo "<h2>Klantgegevens!</h2>";
 ?>
 
 <table border="1">

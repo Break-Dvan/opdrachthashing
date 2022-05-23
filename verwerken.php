@@ -26,6 +26,7 @@ echo 'AANTAL: ' .  $aantal . '<br>';
 if ($aantal==1) {
     // nieuw: gehashed ww koppelen
     $user=mysqli_fetch_array($result);
+    // ingevoerde ww vergelijken met de hash uit de database
     if (password_verify($wachtwoord, $user["ww_hash"])) {
         $_SESSION['ingelogd'] =true;
         header('refresh: 1; programma.php');

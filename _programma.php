@@ -18,7 +18,7 @@ if (!$ingelogd) {
 $query = "SELECT id, achternaam, email, postcode, straat, voornaam, woonplaats FROM klant;";
 $result= mysqli_query($dbconn, $query);
 //STAP 4 | gegevens naar scherm...
-echo "<h2>__Klantgegevens</h2>";
+echo "<h2>Klantgegevens!!</h2>";
 ?>
 
 <table border="1">
